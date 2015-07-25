@@ -1,0 +1,165 @@
+$w-SidePaneView: 300px;
+
+.SidePaneView {
+    display: block;
+    flex-direction: row;
+    position: relative;
+    width: 0;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    box-shadow: $shadow-header;
+    transition: width 0.3s ease-in-out;
+    color: $material-grey-800;
+    z-index: $z-modal;
+}
+.SidePaneView__shadow {
+    display: none;
+}
+.SidePaneView__emptyPane {
+    display: none;
+}
+.SidePaneView__toggler {
+    visibility: hidden;
+    position: absolute;
+
+    &:checked {
+        ~ .SidePaneView {
+            width: $w-SidePaneView;
+        }
+    }
+}
+.SidePaneView__inner {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: $w-SidePaneView;
+    height: 100%;
+    background: $material-white;
+}
+.SidePaneView__emptyPane {
+    display: none;
+}
+.SidePaneView__header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: relative;
+    padding: 0 16px 0 0;
+    border-bottom: 1px solid $material-grey-200;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    h1 {
+        flex: 1;
+        font-size: $fontsize-header;
+        line-height: 64px;
+    }
+}
+.HeaderView__menuButton {
+    margin: 0;
+    cursor: pointer;
+
+    svg.icon {
+        display: block;
+        fill: $material-white;
+    }
+}
+.SidePaneView__main {
+    display: block;
+    position: relative;
+    overflow: scroll;
+    flex-grow: 1;
+}
+.SidePaneView__footer {
+    align-items: center;
+    position: relative;
+    border-top: 1px solid $material-grey-200;
+    flex-shrink: 0;
+}
+
+.SidePaneView__item,
+.SidePaneView__footer {
+    display: flex;
+    flex-direction: row;
+    line-height: 64px;
+    padding: 0 16px;
+    cursor: pointer;
+    outline: none;
+
+    svg.icon {
+        fill: $material-grey-600;
+        margin-left: -16px;
+    }
+    &:hover {
+        background: $material-grey-200;
+    }
+    &.is-selected {
+        color: $material-blue-500 !important;
+
+        svg.icon {
+            fill: $material-blue-500;
+        }
+    }
+}
+@media (max-width: $w-medium) {
+    .SidePaneView {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 0;
+        height: 100%;
+        overflow: hidden;
+        transition: width 0.5s step-end;
+    }
+    .SidePaneView__shadow {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        z-index: ($z-modal)-1;
+        background: rgba($material-black, 0.6);
+        opacity: 0;
+        transition: opacity 0.26s linear,
+                    width 0.26s step-end;
+    }
+    .SidePaneView__inner {
+        left: 0;
+        right: auto;
+        transform: translateX(-$w-SidePaneView);
+        transition: transform 0.5s $ease-slide;
+    }
+    .SidePaneView__emptyPane {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: $w-SidePaneView;
+        height: 100%;
+    }
+
+    .SidePaneView__toggler {
+        &:checked {
+            ~ .SidePaneView__shadow {
+                opacity: 1;
+                width: 100%;
+                transition: opacity 0.26s linear,
+                            width 0.26s step-start;
+            }
+            ~ .SidePaneView {
+                width: 100%;
+                transition: width 0.5s step-start;
+
+                .SidePaneView__inner {
+                    transform: translateX(0px);
+                }
+            }
+        }
+    }
+}

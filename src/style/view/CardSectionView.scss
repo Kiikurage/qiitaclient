@@ -1,0 +1,29 @@
+.CardSectionView {
+    display: block;
+    position: relative;
+
+    &:after {
+        display: block;
+        content: ' ';
+        clear: both;
+    }
+}
+.CardSectionView__header {
+    color: $material-grey-500;
+    margin: 32px 16px 8px;
+}
+
+
+@media (max-width: $w-small) {
+    .CardSectionView {
+        display: flex;
+        flex-direction: column;
+
+        .CardView {
+            padding: 0;
+        }
+        .CardView__inner {
+            border-top: 1px solid $material-grey-200;
+        }
+    }
+}

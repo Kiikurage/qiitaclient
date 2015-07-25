@@ -1,0 +1,70 @@
+.CardView {
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    float: left;
+    width: 33.3333333%;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+
+    &.is-zoomIn {
+        z-index: $z-modal;
+
+        .CardView__inner {
+            position: fixed;
+            box-shadow: none;
+            overflow: visible;
+
+            &:after {
+                position: absolute;
+                display: block;
+                content: ' ';
+                top: 100%;
+                left: 0;
+                right: 0;
+                height: 8px;
+                background: -webkit-linear-gradient(top, rgba(0,0,0,0.1), rgba(0,0,0,0));
+            }
+        }
+    }
+}
+.CardView__fullWidth {
+    width: 100%;
+}
+.CardView__inner {
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    background: $material-white;
+    box-shadow: $shadow-card;
+    overflow: hidden;
+}
+.CardView__row {
+    position: relative;
+    width: 100%;
+    padding: 0 16px;
+    margin: 16px 0;
+    box-sizing: border-box;
+}
+
+@media (max-width: $w-medium) {
+    .CardView {
+        width: 50%;
+    }
+    .CardView__fullWidth {
+        width: 100%;
+    }
+}
+
+@media (max-width: $w-small) {
+    .CardView {
+        float: none;
+        width: auto;
+        padding: 8px 0;
+    }
+    .CardView__inner {
+        border-radius: 0;
+        box-shadow: $shadow-card-sp;
+    }
+}

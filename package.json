@@ -1,0 +1,26 @@
+{
+  "name": "airprobe",
+  "version": "0.0.1",
+  "description": "AIR PROBE",
+  "main": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": {
+    "name": "Yuichiro KIKURA",
+    "email": "y.kikura@gmail.com",
+    "url": "https://github.com/temperman"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^2.3.1",
+    "gulp-browserify": "^0.5.1",
+    "gulp-connect": "^2.2.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.0.3"
+  },
+  "dependencies": {
+    "angular": "^1.4.3"
+  }
+}

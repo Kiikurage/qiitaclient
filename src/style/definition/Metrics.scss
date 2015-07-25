@@ -1,0 +1,29 @@
+$material-primaryColor: #59bb0c;
+$material-primaryTextColor: $material-white;
+$material-textColor: $material-grey-900;
+$material-windowBackground: $material-grey-100;
+
+$w-small: 640px;
+$w-medium: 1080px;
+
+$z-base: 0;
+$z-header: 1;
+$z-popup: 10;
+$z-modal: 100;
+$z-dialog: 1000;
+
+$shadow-base: none;
+$shadow-card-sp: 0 1px 1px 0 rgba($material-black, 0.14);
+$shadow-card: -2px 2px 4px 0 rgba($material-black, 0.14),
+                2px 2px 4px 0 rgba($material-black, 0.14);
+$shadow-header: 0 1px 4px rgba($material-black, 0.26);
+$shadow-popup: none;
+$shadow-modal: -2px 5px 10px 0 rgba($material-black, 0.14),
+                2px 5px 10px 0 rgba($material-black, 0.14);
+$shadow-base: none;
+
+$fontsize-normal: 16px;
+$fontsize-small: 14px;
+$fontsize-header: 20px;
+
+$ease-slide: cubic-bezier(0.325, 0.710, 0.345, 0.980);

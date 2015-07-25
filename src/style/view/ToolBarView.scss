@@ -1,0 +1,38 @@
+.ToolBarView {
+    position: relative;
+    display: block;
+    height: 48px;
+    line-height: 48px;
+    flex-shrink: 0;
+}
+.ToolBarView__inner {
+    position: relative;
+    display: block;
+    flex-direction: row;
+    width: 100%;
+    padding: 0 0px;
+    height: 400px;
+    overflow-x: scroll;
+    overflow-y: visible;
+    white-space: nowrap;
+    box-sizing: border-box;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    >p, >div {
+        display: inline-block;
+        margin: 0 16px;
+    }
+    >button {
+        border: none;
+        background: transparent;
+        padding: 0;
+        cursor: pointer;
+
+        svg.icon {
+            padding: 0;
+        }
+    }
+}

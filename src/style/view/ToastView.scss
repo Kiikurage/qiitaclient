@@ -1,0 +1,35 @@
+.ToastView {
+    display: block;
+    position: fixed;
+    bottom: 32px;
+    left: 32px;
+    height: 64px;
+    min-width: 200px;
+    line-height: 64px;
+    padding: 0 24px;
+    border-radius: 2px;
+    box-shadow: 0 1px 5px rgba(#000, 0.3),
+                0 -1px 5px rgba(#000, 0.3);
+    background: $material-grey-900;
+    color: $material-white;
+    transition: 0.3s ease-in-out;
+    transform: translateY(200px);
+    cursor: pointer;
+    -webkit-user-select: none;
+    z-index: $z-dialog;
+    outline: none;
+
+    &.is-show {
+        transform: translateY(0px);
+    }
+}
+
+@media(max-width: $w-small) {
+    .ToastView {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-radius: 0;
+    }
+}
