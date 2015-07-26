@@ -1,0 +1,16 @@
+html /deep/ *[layout][horizontal] {
+    display: flex;
+    flex-direction: row;
+}
+html /deep/ *[layout][vertical] {
+    display: flex;
+    flex-direction: column;
+}
+html /deep/ *[flex] {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+html /deep/ *[layout][center] {
+    align-items: center;
+    justify-content: center;
+}

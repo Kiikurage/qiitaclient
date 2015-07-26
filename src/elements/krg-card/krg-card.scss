@@ -1,0 +1,40 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+
+:host {
+    display: block;
+    position: relative;
+    flex-shrink: 0;
+    float: left;
+    width: 33.3333333%;
+    padding: 16px;
+    box-sizing: border-box;
+    transition: 0.3s ease-in-out;
+}
+#inner {
+    display: block;
+    position: relative;
+    border-radius: 2px;
+    background: $material-white;
+    box-shadow: $shadow-card;
+    border-top: 1px solid transparent;
+    overflow: hidden;
+    outline: none;
+}
+@media (max-width: $w-medium) {
+    :host {
+        width: 50%;
+    }
+}
+
+@media (max-width: $w-small) {
+    :host {
+        float: none;
+        width: auto;
+        padding: 8px 0;
+    }
+    #inner {
+        border-radius: 0;
+        box-shadow: $shadow-card-sp;
+    }
+}

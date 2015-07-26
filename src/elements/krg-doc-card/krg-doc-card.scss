@@ -1,0 +1,39 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+@import "../krg-card/krg-card.scss";
+
+#inner {
+    padding: 8px;
+}
+header {
+    margin: 8px;
+}
+#userIcon {
+    position: relative;
+    width: 32px;
+    height: 32px;
+    margin-right: 8px;
+    border-radius: 100%;
+}
+#userId,
+#update {
+    color: $material-grey-600;
+    font-size: $fontsize-small;
+}
+#title {
+    font-size: $fontsize-normal;
+    font-weight: normal;
+    margin: 8px;
+}
+#tagContainer {
+    line-height: 32px;
+    color: $material-green-500;
+    font-size: $fontsize-small;
+    margin: 8px;
+
+    span {
+        display: inline-block;
+        position: relative;
+        margin-right: 16px;
+    }
+}

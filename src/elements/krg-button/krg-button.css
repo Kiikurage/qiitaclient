@@ -1,0 +1,36 @@
+:host {
+  display: inline-block;
+  cursor: pointer;
+  border-radius: 2px; }
+
+#inner {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  position: relative;
+  padding: 0 16px;
+  min-height: 40px; }
+
+::content > * {
+  display: block; }
+
+::content > krg-icon {
+  padding: 20px; }
+  ::content > krg-icon:first-child {
+    margin-left: -16px; }
+  ::content > krg-icon:last-child {
+    margin-right: -16px; }

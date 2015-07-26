@@ -1,0 +1,18 @@
+<template name="krg-setting-page">
+    <link rel="stylesheet" href="./krg-setting-page.css">
+
+	<krg-card-section title="アカウント">
+		<krg-card id="logoutCard">
+			<p class="card-row" layout horizontal center>
+				<span id="loginState" flex></span>
+				<krg-button id="logoutButton" onclick="API.pDeauthorize(true);">ログアウト</krg-button>
+			</p>
+		</krg-card>
+		<krg-card id="loginCard">
+			<p class="card-row" layout horizontal center>
+				<span flex>ログインしていません</span>
+				<krg-button id="loginButton" onclick="API.authorize();">ログイン</krg-button>
+			</p>
+		</krg-card>
+	</krg-card>
+</template>

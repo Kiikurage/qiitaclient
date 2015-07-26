@@ -1,0 +1,9 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+@import "../krg-card/krg-card.scss";
+
+:host {
+    display: inline;
+    color: inherit;
+    font: inherit;
+}

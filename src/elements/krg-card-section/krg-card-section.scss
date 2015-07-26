@@ -1,0 +1,34 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+
+:host {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 0 0 16px;
+
+    &:after {
+        display: block;
+        content: ' ';
+        clear: both;
+    }
+}
+#header {
+    display: block;
+    position: relative;
+    width: 100%;
+    color: $material-grey-500;
+    margin: 16px 0 8px;
+    padding: 0 16px;
+    box-sizing: border-box;
+}
+
+@media (max-width: $w-small) {
+    ::content {
+        krg-card,
+        krg-doc-card {
+            border-top: 1px solid $material-grey-200;
+            padding: 0;
+        }
+    }
+}

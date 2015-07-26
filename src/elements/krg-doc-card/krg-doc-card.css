@@ -1,0 +1,68 @@
+:host {
+  display: block;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  float: left;
+  width: 33.3333333%;
+  padding: 16px;
+  box-sizing: border-box;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out; }
+
+#inner {
+  display: block;
+  position: relative;
+  border-radius: 2px;
+  background: #fff;
+  box-shadow: -2px 2px 4px 0 rgba(0, 0, 0, 0.14), 2px 2px 4px 0 rgba(0, 0, 0, 0.14);
+  border-top: 1px solid transparent;
+  overflow: hidden;
+  outline: none; }
+
+@media (max-width: 1080px) {
+  :host {
+    width: 50%; } }
+
+@media (max-width: 640px) {
+  :host {
+    float: none;
+    width: auto;
+    padding: 8px 0; }
+  #inner {
+    border-radius: 0;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14); } }
+
+#inner {
+  padding: 8px; }
+
+header {
+  margin: 8px; }
+
+#userIcon {
+  position: relative;
+  width: 32px;
+  height: 32px;
+  margin-right: 8px;
+  border-radius: 100%; }
+
+#userId,
+#update {
+  color: #757575;
+  font-size: 14px; }
+
+#title {
+  font-size: 16px;
+  font-weight: normal;
+  margin: 8px; }
+
+#tagContainer {
+  line-height: 32px;
+  color: #4caf50;
+  font-size: 14px;
+  margin: 8px; }
+  #tagContainer span {
+    display: inline-block;
+    position: relative;
+    margin-right: 16px; }

@@ -1,0 +1,22 @@
+<template name="krg-sidepane-userbox">
+    <link rel="stylesheet" href="./krg-sidepane-userbox.css">
+
+    <div id="authorized">
+        <img id="icon">
+        <div layout vertical>
+            <h3 id="userId" flex></h3>
+            <p class="row">
+                <span id="contributionCount"></span>contribution
+            </p>
+            <p class="row">
+                <span id="followerCount"></span>follower
+            </p>
+            <p class="row">
+                <span id="followCount"></span>follow
+            </p>
+        </div>
+    </div>
+    <div id="unauthorized" class="is-hide" layout horizontal center>
+        <krg-button onclick="API.authorize();" flex>Qiitaにログインする</krg-button>
+    </div>
+</template>

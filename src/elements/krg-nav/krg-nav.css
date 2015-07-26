@@ -1,0 +1,29 @@
+:host {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 0 16px; }
+
+::content > * {
+  display: block; }
+
+::content > krg-button:first-child {
+  margin-left: -16px; }
+
+::content > krg-button:last-child {
+  margin-right: -16px; }

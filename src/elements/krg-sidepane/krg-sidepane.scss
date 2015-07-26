@@ -1,0 +1,96 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+
+$w-SidePaneView: 300px;
+
+:host {
+	display: block;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	transition: width 0.5s step-end;
+	box-shadow: $shadow-header;
+	color: $material-grey-800;
+	z-index: $z-modal;
+}
+:host([open]) {
+	width: 100%;
+	transition: width 0.5s step-start;
+
+	#shadow {
+		opacity: 1;
+		width: 100%;
+		transition: opacity 0.26s linear, width 0.26s step-start;
+    }
+	#inner {
+		transform: translateX(0px);
+	}
+}
+#shadow {
+	display: block;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	width: 0;
+	z-index: ($z-modal)-1;
+	background: rgba($material-black, 0.6);
+	opacity: 0;
+	transition: opacity 0.26s linear, width 0.26s step-end;
+}
+#inner {
+	display: flex;
+	flex-direction: column;
+	position: absolute;
+	top: 0;
+	right: auto;
+	left: 0;
+	width: $w-SidePaneView;
+	height: 100%;
+	background: $material-white;
+	transform: translateX(-$w-SidePaneView);
+	transition: transform 0.5s $ease-slide;
+	z-index: $z-modal;
+}
+#toggler {
+	display: block;
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: $w-SidePaneView;
+	height: 100%;
+	z-index: $z-modal;
+}
+#headerContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;
+	border-bottom: 1px solid $material-grey-200;
+	flex-shrink: 0;
+	flex-grow: 0;
+	order: 1;
+}
+#mainContainer {
+	display: block;
+	position: relative;
+	overflow: scroll;
+	flex-grow: 1;
+	flex-shrink: 1;
+	order: 2;
+}
+#footerContainer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: flex-start;;
+	border-top: 1px solid $material-grey-200;
+	flex-shrink: 0;
+	flex-grow: 0;
+	order: 3;
+}

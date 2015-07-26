@@ -1,0 +1,23 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+
+:host {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+	min-height: 64px;
+    padding: 0 16px;
+}
+
+::content {
+    > * {
+        display: block;
+    }
+    > krg-button:first-child {
+        margin-left: -16px;
+    }
+    > krg-button:last-child {
+        margin-right: -16px;
+    }
+}

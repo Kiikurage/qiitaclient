@@ -1,0 +1,21 @@
+<template name="krg-sidepane">
+    <link rel="stylesheet" href="./krg-sidepane.css">
+
+	<div id="shadow"></div>
+
+	<div id="inner">
+		<div id="headerContainer">
+            <content select='header,[header]'></content>
+		</div>
+
+		<div id="footerContainer">
+            <content select='footer,[footer]'></content>
+		</div>
+
+		<div id="mainContainer">
+            <content></content>
+		</div>
+	</div>
+
+	<div id="toggler"></div>
+</template>

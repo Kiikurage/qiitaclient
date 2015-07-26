@@ -1,0 +1,31 @@
+@import "../krg-defs/MaterialColor.scss";
+@import "../krg-defs/Metrics.scss";
+@import "../krg-page/krg-page.scss";
+
+#logoutCard,
+#loginCard {
+    display: none;
+}
+
+:host([state="logined"]) {
+    #logoutCard {
+        display: block;
+    }
+}
+:host([state="logouted"]) {
+    #loginCard {
+        display: block;
+    }
+}
+.card-row {
+    padding: 16px;
+    margin: 0;
+}
+#logoutButton {
+    background: $material-red-500;
+    color: $material-white;
+}
+#loginButton {
+    background: $material-red-500;
+    color: $material-white;
+}

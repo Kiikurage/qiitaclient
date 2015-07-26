@@ -1,0 +1,31 @@
+:host {
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+#inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 0 16px;
+    min-height: 40px;
+}
+
+::content {
+    > * {
+        display: block;
+    }
+    > krg-icon {
+        padding: 20px;
+
+        &:first-child {
+            margin-left: -16px;
+        }
+        &:last-child {
+            margin-right: -16px;
+        }
+    }
+}
