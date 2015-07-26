@@ -1,8 +1,8 @@
 {
-  "name": "AIR PROBE",
-  "short_name": "AIR PROBE",
+  "name": "Qiita Client",
+  "short_name": "Qiita Client",
   "icons": [],
-  "start_url": "index.html",
+  "start_url": "/",
   "display": "standalone",
-  "version": "1.0"
+  "version": "0.1"
 }
