@@ -9,12 +9,12 @@
 
 :host([state="logined"]) {
     #logoutCard {
-        display: block;
+        display: flex;
     }
 }
 :host([state="logouted"]) {
     #loginCard {
-        display: block;
+        display: flex;
     }
 }
 .card-row {

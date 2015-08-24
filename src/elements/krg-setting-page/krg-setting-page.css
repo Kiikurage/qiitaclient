@@ -24,10 +24,16 @@
   display: none; }
 
 :host([state="logined"]) #logoutCard {
-  display: block; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 :host([state="logouted"]) #loginCard {
-  display: block; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex; }
 
 .card-row {
   padding: 16px;

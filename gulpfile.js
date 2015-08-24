@@ -54,12 +54,13 @@ gulp.task('build::js', function() {
 
 /**
  * copy static library files.
- * @TODO it's very dirty hack!!!!!!!!!!!!!!
  */
-gulp.task('build::js-static', function() {
+gulp.task('build::static', function() {
 	return gulp.src([
 			'./bower_components/sw-toolbox/sw-toolbox.js',
-			'./node_modules/webcomponents.js/webcomponents.min.js'
+			'./node_modules/webcomponents.js/webcomponents.min.js',
+			'./src/page/sw.js',
+			'./src/manifest.json'
 		])
 		.pipe(gulp.dest('./build/'))
 });
@@ -67,7 +68,7 @@ gulp.task('build::js-static', function() {
 /**
  * watch js files, and when changed, compile it.
  */
-gulp.task('watch::js', ['build::js', 'build::js-static'], function() {
+gulp.task('watch::js', ['build::js'], function() {
 	return gulp.watch([
 		'./src/**/*.js',
 		'./src/elements/**/*.js'
@@ -102,7 +103,7 @@ gulp.task('vulcanize', function() {
 /**
  * run http server for debug only.
  */
-gulp.task('server', ['watch::sass', 'watch::js', 'watch::html'], function() {
+gulp.task('server', ['build::static', 'watch::sass', 'watch::js', 'watch::html'], function() {
 	connect.server({
 		root: './build',
 		livereload: false,

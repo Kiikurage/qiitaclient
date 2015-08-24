@@ -22,7 +22,6 @@ DocCardPrototype.createdCallback = function() {
 DocCardPrototype.setDoc = function(doc) {
 	var $ = this.$;
 
-	console.log(doc);
 	if (doc) {
 		$.userIcon.src = doc['user']['profile_image_url']
 		$.userId.textContent = doc['user']['id'];

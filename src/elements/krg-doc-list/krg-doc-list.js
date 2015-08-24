@@ -12,9 +12,43 @@ DocListPrototype.createdCallback = function() {
 	this.$ = {
 		container: shadowRoot.getElementById('container')
 	};
+	this.$.container.addEventListener('click', this.onClick.bind(this));
+	this.addEventListener('click', function(ev){
+		console.log(ev);
+	});
 
 	this.updateTitle();
 };
+
+DocListPrototype.onClick = function(ev){
+	var path = ev.path,
+		container = this.$.container,
+ 		offset = path.indexOf(container)-1,
+		target = path[offset];
+
+	while (!(target instanceof HTMLElement) || target instanceof HTMLContentElement) {
+		offset--;
+		if (offset <= -1) {
+			target = null;
+			break;
+		}
+		target = path[offset];
+	}
+	if (!target) {
+		return;
+	}
+
+	var index = Array.prototype.indexOf.call(this.$.container.children, target);
+
+	ev.stopImmediatePropagation();
+	this.dispatchEvent(new CustomEvent('click', {
+		detail: {
+			index: index,
+			targe: target
+		}
+	}));
+	// console.log(index, target);
+}
 
 DocListPrototype.setDocs = function(docs) {
     var container = this.$.container
